@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as collectionActions from '../actions/collections';
-import styles from '../../css/app.css';
+import styles from '../../css/app.scss';
 
 import CollectionBrowser from './CollectionBrowser';
 
@@ -21,6 +21,7 @@ class Home extends Component {
   render() {
     return (
       <main>
+        <span className='text'>hello</span>
         <CollectionBrowser collections={ this.props.collections }/>
         <button onClick={ this.onClick.bind(this) }>Add a Newspaper</button>
       </main>

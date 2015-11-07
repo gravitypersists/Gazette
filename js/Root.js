@@ -17,10 +17,9 @@ export default React.createClass({
       <div>
         <Provider store={store}>
           <Router history={ createHashHistory({ queryKey: false }) }>
-            <Route path='/' component={ Home }>
-              <Route path='/col/:id' component={ Collection }/>
-              <Route path='*' component={ NoMatch }/>
-            </Route>
+            <Route path='/' component={ Home } />
+            <Route path='/col/:id' component={ Collection }/>
+            <Route path='*' component={ NoMatch }/>
           </Router>
         </Provider>
 

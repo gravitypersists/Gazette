@@ -1,0 +1,56 @@
+$tan: #eae8cc;
+$navy: #283655;
+$gray: #97949a;
+$salmon: #cf9792;
+$lightgray: #ddd;
+
+.text {
+  color: $navy;
+}
+
+
+.layout {
+  width: 700px;
+  margin: 0 auto;
+
+  .react-grid-item {
+    background-color: $lightgray;
+    border-radius: 5px;
+  }
+
+  .react-grid-item-dragging {
+    z-index: 100;
+  }
+
+  .react-grid-placeholder {
+    background-color: white;
+    border: 1px solid $lightgray;
+    z-index: 0;
+  }
+
+}
+
+.spinner {
+  margin: 50px;
+  height: 1.5em;
+  width: 1.5em;
+  animation: rotate 0.8s infinite linear;
+  border-width: 0.4em;
+  border-style: solid;
+  border-color: $gray;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+.white-spinner {
+  @extend .spinner;
+  border-color: white;
+}
+
+@keyframes rotate {
+  0%    { transform: rotate(0deg); }
+  100%  { transform: rotate(360deg); }
+}

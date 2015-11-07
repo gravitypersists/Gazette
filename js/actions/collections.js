@@ -16,6 +16,10 @@ export function create(collection) {
   return dispatch => {
     let newCollection = ref.push();
     newCollection.set(collection);
-    // dispatch(receiveCollection(newCollection.val()));
   }
+}
+
+export function setCollectionLayout(id, layout) {
+  ref.child(id).set({layout});
+  return { type: 'NONE' };
 }
