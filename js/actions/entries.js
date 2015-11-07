@@ -1,5 +1,3 @@
-import fetch from '../utils/fetch';
-
 
 function entries(id) {
   return fetch(`collection/${id}/entries`);

@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as collectionActions from '../actions/collections';
-import styles from '../../css/app.css';
 
-import CollectionBrowser from './CollectionBrowser';
-
-class Home extends Component {
+class Collection extends Component {
 
   componentWillMount() {
-    this.props.subscribe();
+    this.props.subscribe(this.props.params.id);
   }
 
   onClick() {
@@ -21,8 +18,7 @@ class Home extends Component {
   render() {
     return (
       <main>
-        <CollectionBrowser collections={ this.props.collections }/>
-        <button onClick={ this.onClick.bind(this) }>Add a Newspaper</button>
+        Oh hai
       </main>
     );
   }
@@ -35,8 +31,7 @@ function mapStateToProps(state) {
 }
 
 const attachActions = {
-  subscribe: collectionActions.subscribe,
-  create: collectionActions.create
+  subscribe: collectionActions.subscribeToCollection
 }
 
-export default connect(mapStateToProps, attachActions)(Home)
+export default connect(mapStateToProps, attachActions)(Collection)
