@@ -17,6 +17,7 @@ const store = configureStore({});
 
 const history = createHashHistory({ queryKey: false });
 window.hackhistory = history;
+window.demoCol = '-K2cuXlS-Vsu3K4JX9cC';
 
 export default React.createClass({
   render() {

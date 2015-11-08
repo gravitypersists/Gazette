@@ -24,12 +24,15 @@ export default class EntryPreview extends React.Component {
   renderPublished() {
     let { entry } = this.props;
     return (
-      <div className='entry-preview-published'>
-        <div className='title'>{ entry.title }</div>
-        <div className='entry-content' dangerouslySetInnerHTML={{ __html:entry.content }}></div>
-        <Link className='read-more' to={`/col/${ this.props.colid }/${ this.props.id }`}>
-          Read more
-        </Link>
+      <div>
+        <div className='fade'></div>
+        <div className='entry-preview-published'>
+          <div className='title'>{ entry.title }</div>
+          <div className='entry-content' dangerouslySetInnerHTML={{ __html:entry.content }}></div>
+          <Link className='read-more' to={`/col/${ this.props.colid }/${ this.props.id }`}>
+            Read more
+          </Link>
+        </div>
       </div>
     )
   }

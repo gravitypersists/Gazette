@@ -1,4 +1,5 @@
-
+import Firebase from 'firebase';
+const ref = new Firebase('https://gazette.firebaseio.com/collections/-K2cgVa8Ys1uYoyN8PJo');
 
 export function getUser() {
   let local = localStorage.getItem('user');
@@ -6,7 +7,8 @@ export function getUser() {
   if (local) {
     user = JSON.parse(local);
   } else {
-    localStorage.setItem('user', JSON.stringify({}));
+    let newEntry = ref.child('entries').push({});
+    localStorage.setItem('user', JSON.stringify({entry: newEntry.key()}));
     user = JSON.parse(localStorage.getItem('user'));
   }
   return { type: 'RECEIVE_USER', user }

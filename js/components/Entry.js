@@ -44,7 +44,7 @@ class Entry extends React.Component {
   handlePublish() {
     const collection = this.props.collections[this.props.params.colid];
     const entry = collection.entries[this.props.params.entryid];
-    this.props.setEntryForCollection(this.props.params.colid, this.props.params.entryid, Object.assign({}, entry, { published: true }));
+    this.props.setEntryForCollection(this.props.params.colid, this.props.params.entryid, Object.assign({}, entry, { published: true, publishDate: Date.now() }));
   }
 
   renderPublished(collection, entry) {
@@ -109,8 +109,8 @@ class Entry extends React.Component {
   render() {
     const collection = this.props.collections[this.props.params.colid];
     if (!collection) return <div className='loading-indicator'></div>;
-    const entry = collection.entries[this.props.params.entryid];
-    if (!entry) return <div>Not Found</div>;
+    let entry = collection.entries[this.props.params.entryid];
+    if (!entry) entry = { content: "", title: "" };
     if (entry.published) {
       return this.renderPublished(collection, entry);
     } else {

@@ -8,6 +8,7 @@ import 'react-grid-layout/css/styles.css';
 import EntryPreview from './EntryPreview';
 import CollectionConfig from './CollectionConfig';
 import Prompt from './Prompt';
+import layouts from '../content/layouts';
 
 class Collection extends Component {
 
@@ -41,8 +42,10 @@ class Collection extends Component {
 
   render() {
     let isTeacher = localStorage.getItem('teacher');
-    const c = this.props.collections[this.props.params.id];
+    let c = this.props.collections[this.props.params.id];
     if (!c) return <div className='spinner'></div>;
+    _.forEach(c.entries, (v, k) => v.id = k);
+    let entriesSorted = _.sortBy(_.values(c.entries), 'publishDate');
     return (
       <div className={ isTeacher ? 'for-teacher' : '' }>
         { isTeacher ? this.renderConfig(c) : this.renderPrompt(c) }
@@ -51,14 +54,17 @@ class Collection extends Component {
           isResizable={ isTeacher ? true : false }
           isDraggable={ isTeacher ? true : false }
           cols={3}
-          rowHeight={120}
+          rowHeight={240}
           onLayoutChange={ this.handleLayoutChange.bind(this) }
         >
-          { c.layout.map((l, i) => {
+          { entriesSorted.map((entry, i) => {
+            console.log(layouts);
+            console.log(i);
+            let grid = c.layout[i] || layouts.layouts[i];
             return (
-              <div key={i} _grid={l} >
-                <div className={'entry-prev-container ' + ((c.entries[l.i].published) ? 'is-published' : '')}>
-                  <EntryPreview entry={ c.entries[l.i] } id={l.i} colid={ this.props.params.id } />
+              <div key={i} _grid={grid} >
+                <div className={'entry-prev-container ' + ((entry.published) ? 'is-published' : '')}>
+                  <EntryPreview entry={ entry } id={entry.id} colid={ this.props.params.id } />
                 </div>
               </div>
             )

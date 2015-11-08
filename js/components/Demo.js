@@ -4,6 +4,8 @@ import * as collectionActions from '../actions/collections';
 import * as userActions from '../actions/users';
 import Modal from 'boron/WaveModal';
 import _ from 'lodash';
+import Entry from './Entry';
+import Collection from './Collection';
 
 class Demo extends Component {
 
@@ -36,6 +38,24 @@ class Demo extends Component {
     this.props.setUser(Object.assign({}, this.props.user, {name}));
   }
 
+  renderEdit() {
+    return <Entry params={{ colid: window.demoCol, entryid: this.props.user.entry}} />
+  }
+
+  renderCollection() {
+    return <Collection params={{ id: window.demoCol }} />
+  }
+
+  renderEntry() {
+    let collection = this.props.collections[window.demoCol];
+    let entry = collection.entries[this.props.user.entry];
+    if (entry && entry.published) {
+      return this.renderCollection();
+    } else {
+      return this.renderEdit();
+    }
+  }
+
   render() {
     return (
       <div>
@@ -58,6 +78,7 @@ class Demo extends Component {
             </ul>
           </div>
         </Modal>
+        { (this.props.user.entry) && this.renderEntry() }
       </div>
     );
   }

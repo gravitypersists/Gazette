@@ -33,6 +33,12 @@ export function setCollectionProps(id, props) {
 }
 
 export function setEntryForCollection(colid, entryid, entry) {
+  let clone = _.cloneDeep(entry);
+  if (localStorage.getItem('user')) {
+    let user = localStorage.getItem('user');
+    clone.authorName = user.name;
+    clone.authorAvatar = user.avatar;
+  }
   ref.child(colid).child('entries').child(entryid).set(entry);
   return { type: 'NONE' };
 }
