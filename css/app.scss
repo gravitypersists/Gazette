@@ -1,13 +1,14 @@
-$tan: #eae8cc;
-$navy: #283655;
-$gray: #97949a;
-$salmon: #cf9792;
-$lightgray: #ddd;
+@import 'mixins';
+@import 'prompt';
+@import 'colors';
+
+body {
+  font-family: "Open Sans";
+}
 
 .text {
   color: $navy;
 }
-
 
 .layout {
   width: 700px;
@@ -28,6 +29,37 @@ $lightgray: #ddd;
     z-index: 0;
   }
 
+}
+
+.collection-creator {
+  margin: 0 auto;
+  width: 700px;
+
+  .create-header {
+    color: $green;
+    text-align: center;
+    margin-bottom: 15px;
+    h2 {
+      margin: 0;
+    }
+  }
+
+  .prompt-preview {
+    margin-top: 30px;
+  }
+
+  .create {
+    width: 300px;
+    height: 70px;
+    margin: 30px auto;
+    display: block;
+    outline: none;
+    border: none;
+    color: white;
+    background-color: $green;
+    border-radius: 5px;
+    font-size: 22px;
+  }
 }
 
 .spinner {
@@ -53,4 +85,51 @@ $lightgray: #ddd;
 @keyframes rotate {
   0%    { transform: rotate(0deg); }
   100%  { transform: rotate(360deg); }
+}
+
+.genre-picker {
+  @include clearfix;
+  width: 540px;
+  margin: 0 auto;
+  text-align: center;
+  vertical-align: bottom;
+  .genre {
+    width: 150px;
+    height: 100px;
+    float: left;
+    margin-right: 30px;
+    background-color: $lightgray;
+    border-radius: 5px;
+    margin-bottom: 30px;
+  }
+  .label {
+    color: white;
+  }
+}
+
+.modal-content {
+
+  > div:first-child {
+    outline: none;
+    padding: 30px;
+    padding-top: 15px;
+    background-color: white;
+    border-radius: 3px;
+    outline: none;
+    text-align: center;
+  }
+
+  h1 {
+    color: $gray;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 16px;
+    padding-bottom: 12px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.5em;
+    margin: 1em 0;
+  }
 }

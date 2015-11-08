@@ -1,21 +1,30 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as collectionActions from '../actions/collections';
-import styles from '../../css/app.scss';
+import Modal from 'boron/OutlineModal';
 
 import CollectionBrowser from './CollectionBrowser';
+import CollectionCreator from './CollectionCreator';
 
 class Home extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      showingAdd: false
+    }
+  }
 
   componentWillMount() {
     this.props.subscribe();
   }
 
-  onClick() {
-    this.props.create({
-      name: 'Simple Project',
-      date: Date.now()
-    });
+  handleNewCollection(collection) {
+    this.props.create(collection);
+  }
+
+  handleAddClick() {
+    this.setState({ showingAdd: true });
   }
 
   render() {
@@ -23,7 +32,8 @@ class Home extends Component {
       <main>
         <span className='text'>hello</span>
         <CollectionBrowser collections={ this.props.collections }/>
-        <button onClick={ this.onClick.bind(this) }>Add a Newspaper</button>
+        <button onClick={ this.handleAddClick.bind(this) }>Add a Newspaper</button>
+        { this.state.showingAdd && <CollectionCreator onCreate={ this.handleNewCollection.bind(this) } /> }
       </main>
     );
   }

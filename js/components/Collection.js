@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 import * as collectionActions from '../actions/collections';
 import moment from 'moment';
 import ReactGridLayout from 'react-grid-layout';
+
 import 'react-grid-layout/css/styles.css';
+import EntryPreview from './EntryPreview';
 
 class Collection extends Component {
 
@@ -19,7 +21,7 @@ class Collection extends Component {
     const c = this.props.collections[this.props.params.id];
     if (!c) return <div className='spinner'></div>;
     return (
-      <main>
+      <div>
         <div className='title'>{ c.title }</div>
         <div className='date'>{ moment(c.date).fromNow() }</div>
         <ReactGridLayout
@@ -29,9 +31,15 @@ class Collection extends Component {
           rowHeight={50}
           onLayoutChange={ this.handleLayoutChange.bind(this) }
         >
-          { c.layout.map((l, i) => <div key={i} _grid={l}></div>) }
+          { c.layout.map((l, i) => {
+            return (
+              <div key={i} _grid={l}>
+                <EntryPreview entry={ c.entries[l.i] } />
+              </div>
+            )
+          }) }
         </ReactGridLayout>
-      </main>
+      </div>
     );
   }
 }

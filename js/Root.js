@@ -8,19 +8,26 @@ import configureStore from './utils/configureStore';
 import Home from './components/Home';
 import Collection from './components/Collection';
 import NoMatch from './components/NoMatch';
+import styles from '../css/app.scss';
 
 const store = configureStore({});
+
+const history = createHashHistory({ queryKey: false });
+window.hackhistory = history;
 
 export default React.createClass({
   render() {
     return (
       <div>
         <Provider store={store}>
-          <Router history={ createHashHistory({ queryKey: false }) }>
-            <Route path='/' component={ Home } />
-            <Route path='/col/:id' component={ Collection }/>
-            <Route path='*' component={ NoMatch }/>
-          </Router>
+          <div>
+            <div>test</div>
+            <Router history={ history }>
+              <Route path='/' component={ Home } />
+              <Route path='/col/:id' component={ Collection }/>
+              <Route path='*' component={ NoMatch }/>
+            </Router>
+          </div>
         </Provider>
 
         {/* only renders when running in DEV mode */
