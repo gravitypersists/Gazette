@@ -28,6 +28,10 @@ export default class EntryPreview extends React.Component {
         <div className='fade'></div>
         <div className='entry-preview-published'>
           <div className='title'>{ entry.title }</div>
+          <div className='author'>
+            <img className='avatar' src={ `https://robohash.org/${entry.authorAvatar}.png` } />
+            <span className='authorname'>{ entry.authorName }</span>
+          </div>
           <div className='entry-content' dangerouslySetInnerHTML={{ __html:entry.content }}></div>
           <Link className='read-more' to={`/col/${ this.props.colid }/${ this.props.id }`}>
             Read more

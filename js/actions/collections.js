@@ -35,10 +35,10 @@ export function setCollectionProps(id, props) {
 export function setEntryForCollection(colid, entryid, entry) {
   let clone = _.cloneDeep(entry);
   if (localStorage.getItem('user')) {
-    let user = localStorage.getItem('user');
+    let user = JSON.parse(localStorage.getItem('user'));
     clone.authorName = user.name;
     clone.authorAvatar = user.avatar;
   }
-  ref.child(colid).child('entries').child(entryid).set(entry);
+  ref.child(colid).child('entries').child(entryid).set(clone);
   return { type: 'NONE' };
 }

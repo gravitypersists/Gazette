@@ -73,6 +73,19 @@
   .entry-content {
     width: auto;
   }
+  .author {
+    .avatar {
+      width: 30px;
+      border-radius: 50%;
+      border: 1px solid $lightgray;
+    }
+    .authorname {
+      position: relative;
+      bottom: 9px;
+      left: 10px;
+      color: gray;
+    }
+  }
 }
 
 // within preview
