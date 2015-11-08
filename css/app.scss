@@ -5,12 +5,14 @@
 @import 'browser';
 @import 'grid';
 @import 'config';
+@import 'entry';
 
 body {
   font-family: "Open Sans";
   margin: 0;
   padding: 0;
   margin-top: 50px;
+  padding-bottom: 50px;
 }
 
 input[type=text] {
@@ -19,6 +21,23 @@ input[type=text] {
   border-radius: none;
   font-size: 24px;
   padding: 0 10px;
+}
+
+button {
+  padding: 15px;
+  height: 30px;
+  line-height: 30px;
+  border: none;
+  outline: none;
+  background-color: $purple;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 0;
+
+  &.secondary {
+    background-color: $gray;
+  }
 }
 
 .text {

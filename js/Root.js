@@ -10,6 +10,7 @@ import Collection from './components/Collection';
 import NoMatch from './components/NoMatch';
 import styles from '../css/app.scss';
 import Header from './components/Header';
+import Entry from './components/Entry';
 
 const store = configureStore({});
 
@@ -26,6 +27,7 @@ export default React.createClass({
             <Router history={ history }>
               <Route path='/' component={ Home } />
               <Route path='/col/:id' component={ Collection }/>
+              <Route path='/col/:colid/:entryid' component={ Entry }/>
               <Route path='*' component={ NoMatch }/>
             </Router>
           </div>

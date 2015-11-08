@@ -8,12 +8,15 @@ export default class Prompt extends React.Component {
   }
 
   render() {
-    const { prompt } = this.props;
+    const { config } = this.props;
     return (
-      <div className='prompt'>
-        <div className='description'>{ prompt.description }</div>
-        <ul className='guidelines'>
-          { prompt.guidelines.map(g => <li>{g}</li>) }
+      <div className='student-prompt'>
+        <div className='overview'>
+          <span className='title'>{ config.title }: </span>
+          <span className='prompt-description'>{ config.prompt.description }</span>
+        </div>
+        <ul className='prompt-guidelines'>
+          { config.prompt.guidelines.map(g => <li>{g}</li>) }
         </ul>
       </div>
     )

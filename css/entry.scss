@@ -1,0 +1,72 @@
+@import 'colors';
+
+
+
+.publish {
+  position: absolute;
+  right: 10px;
+  top: 35px;
+}
+
+.confirm-it {
+  button {
+    margin-left: 30px;
+    margin-top: 30px;
+    width: 150px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+
+.entry {
+  width: 600px;
+  margin: 0 auto;
+  position: relative;
+
+  .entry-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+    outline: none;
+    border: none;
+    margin-left: 10px;
+    margin-top: 30px;
+    width: 480px;
+  }
+
+  .entry {
+    .entry-content {
+      border: 1px solid #ddd;
+    }
+  }
+}
+
+.entry-content {
+  min-height: 400px;
+  font-family: "'Georgia', serif";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 21px;
+  line-height: 1.58;
+  letter-spacing: -0.003em;
+  width: 600px;
+  margin: 0 auto;
+
+  .ql-editor {
+    min-height: 400px;
+    font-family: "'Georgia', serif";
+    font-weight: 400;
+    font-style: normal;
+    font-size: 21px;
+    line-height: 1.58;
+    letter-spacing: -0.003em;
+  }
+}
+
+.entry.published {
+  .entry-title {
+    margin-left: 0;
+    margin-bottom: 40px;
+  }
+}

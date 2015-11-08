@@ -6,16 +6,16 @@ export default {
   ],
   entries: {
     "0": {
-      title: "Put Another Quarter in the Jukebox",
-      content: "I believe music should be free. This is because"
+      title: "",
+      content: ""
     },
     "1": {
-      title: "Set Music Free",
-      content: "I believe music should be free. This is because"
+      title: "",
+      content: ""
     },
     "2": {
-      title: "Musicians Need to Eat, too",
-      content: "I believe music should be free. This is because"
+      title: "",
+      content: ""
     }
   }
 }

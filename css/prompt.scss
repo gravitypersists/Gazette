@@ -1,9 +1,23 @@
 @import 'colors';
 
-.prompt {
+.student-prompt {
   width: 700px;
-  border: 1px solid $lightgray;
-  border-radius: 5px;
+  margin: 0 auto;
+  color: #4E4D4D;
 
+  .title {
+    font-size: 20px;
+    font-weight: bold;
+    color: $gray;
+  }
+  .prompt-description {
+    font-size: 20px;
+  }
 
+  .prompt-guidelines {
+    margin-top: 25px;
+    font-size: 14px;
+    width: 700px;
+    margin-left: 100px;
+  }
 }

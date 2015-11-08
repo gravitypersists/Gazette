@@ -33,3 +33,8 @@ export function setCollectionProps(id, props) {
   ref.child(id).set(props);
   return { type: 'NONE' };
 }
+
+export function setEntryForCollection(colid, entryid, entry) {
+  ref.child(colid).child('entries').child(entryid).set(entry);
+  return { type: 'NONE' };
+}
