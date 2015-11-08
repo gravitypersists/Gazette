@@ -5,32 +5,50 @@
   margin: 0 auto;
 
   .react-grid-item {
-    background-color: $lightgray;
-    padding: 15px;
-    box-sizing: border-box;
-    margin: 20px;
-    overflow: hidden;
-    .title {
-      color: white;
-      font-size: 20px;
-      margin-bottom: 5px;
-    }
-    .content-preview {
-      color: $gray;
-    }
-    .attribution {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 40px;
+
+    .entry-prev-container {
+      position: relative;
       width: 100%;
-      background-color: white;
-      border: 1px solid $lightgray;
+      height: 100%;
+      background-color: $lightgray;
+      padding: 15px;
       box-sizing: border-box;
-      cursor: pointer;
+      overflow: hidden;
+      &.is-published {
+        background-color: white;
+        padding: 5px;
+        .react-resizable-handle {
+          display: none;
+        }
+      }
+      .title {
+        color: white;
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+      .content-preview {
+        color: $gray;
+      }
+      .attribution {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 40px;
+        width: 100%;
+        background-color: white;
+        border: 1px solid $lightgray;
+        box-sizing: border-box;
+        cursor: pointer;
+      }
     }
   }
 
+  .read-more {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: white;
+  }
 
   .react-grid-item-dragging {
     z-index: 100;
@@ -42,4 +60,15 @@
     z-index: 0;
   }
 
+}
+
+.for-teacher {
+  .is-published {
+    &:hover {
+      border: 1px solid $lightgray;
+      .react-resizable-handle {
+        display: block;
+      }
+    }
+  }
 }

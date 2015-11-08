@@ -1,8 +1,6 @@
 import Firebase from 'firebase';
 import layouts from '../content/layouts';
 
-Firebase.goOffline();
-
 const ref = new Firebase('https://gazette.firebaseio.com/collections');
 
 function receiveCollection(collections) {

@@ -1,7 +1,5 @@
 @import 'colors';
 
-
-
 .publish {
   position: absolute;
   right: 10px;
@@ -68,5 +66,15 @@
   .entry-title {
     margin-left: 0;
     margin-bottom: 40px;
+  }
+}
+
+// within preview
+.is-published {
+  .title {
+    color: black !important;
+  }
+  .entry-content {
+    font-size: 16px;
   }
 }
