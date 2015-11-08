@@ -16,6 +16,7 @@
     "lodash": "^3.10.1",
     "moment": "^2.10.6",
     "react": "^0.14.0",
+    "react-datepicker": "^0.15.2",
     "react-dom": "^0.14.0",
     "react-grid-layout": "git@github.com:stha/react-grid-layout",
     "react-redux": "^4.0.0",

@@ -28,3 +28,8 @@ export function setCollectionLayout(id, layout) {
   ref.child(id).child('layout').set({...layout});
   return { type: 'NONE' };
 }
+
+export function setCollectionProps(id, props) {
+  ref.child(id).set(props);
+  return { type: 'NONE' };
+}

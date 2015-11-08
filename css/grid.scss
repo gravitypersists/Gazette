@@ -7,10 +7,29 @@
   .react-grid-item {
     background-color: $lightgray;
     padding: 15px;
-    color: white;
     box-sizing: border-box;
-    font-size: 20px;
+    margin: 20px;
+    .title {
+      color: white;
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+    .content-preview {
+      color: $gray;
+    }
+    .attribution {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 40px;
+      width: 100%;
+      background-color: white;
+      border: 1px solid $lightgray;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
   }
+
 
   .react-grid-item-dragging {
     z-index: 100;

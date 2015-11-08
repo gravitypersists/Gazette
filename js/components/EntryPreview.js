@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 export default class EntryPreview extends React.Component {
 
@@ -8,9 +9,14 @@ export default class EntryPreview extends React.Component {
   }
 
   render() {
+    let { entry } = this.props;
     return (
       <div>
-        { this.props.entry.content }
+        <div className='title'>{ entry.title }</div>
+        <div className='content-preview'>{ entry.content }</div>
+        <Link to={`/col/${ this.props.colid }/${ this.props.id }`}>
+          <div className='attribution'></div>
+        </Link>
       </div>
     )
   }
