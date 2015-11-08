@@ -9,6 +9,7 @@ import Home from './components/Home';
 import Collection from './components/Collection';
 import NoMatch from './components/NoMatch';
 import styles from '../css/app.scss';
+import Header from './components/Header';
 
 const store = configureStore({});
 
@@ -21,7 +22,7 @@ export default React.createClass({
       <div>
         <Provider store={store}>
           <div>
-            <div>test</div>
+            <Header />
             <Router history={ history }>
               <Route path='/' component={ Home } />
               <Route path='/col/:id' component={ Collection }/>

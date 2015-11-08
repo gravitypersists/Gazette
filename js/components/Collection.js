@@ -28,7 +28,7 @@ class Collection extends Component {
           className='layout'
           isResizable={ true }
           cols={3}
-          rowHeight={50}
+          rowHeight={90}
           onLayoutChange={ this.handleLayoutChange.bind(this) }
         >
           { c.layout.map((l, i) => {

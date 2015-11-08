@@ -12,8 +12,9 @@ export default function(state = defaultState, action) {
   switch (action.type) {
 
     case 'RECEIVE_COLLECTIONS':
-      _.each(action.collections, col => col = _.defaults(col, defaultCollection));
-      return Object.assign({}, state, {...action.collections});
+      let clone = _.cloneDeep(action.collections);
+      _.each(clone, col => col = _.defaults(col, defaultCollection));
+      return Object.assign({}, state, {...clone});
 
     default:
       return state;

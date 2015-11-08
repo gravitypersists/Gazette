@@ -30,10 +30,16 @@ class Home extends Component {
   render() {
     return (
       <main>
-        <span className='text'>hello</span>
-        <CollectionBrowser collections={ this.props.collections }/>
-        <button onClick={ this.handleAddClick.bind(this) }>Add a Newspaper</button>
-        { this.state.showingAdd && <CollectionCreator onCreate={ this.handleNewCollection.bind(this) } /> }
+
+        { this.state.showingAdd ?
+          <CollectionCreator
+            onCreate={ this.handleNewCollection.bind(this) }
+          /> :
+          <CollectionBrowser
+            collections={ this.props.collections }
+            onAdd={ this.handleAddClick.bind(this) }
+          />
+        }
       </main>
     );
   }

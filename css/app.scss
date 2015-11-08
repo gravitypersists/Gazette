@@ -1,38 +1,25 @@
 @import 'mixins';
 @import 'prompt';
 @import 'colors';
+@import 'header';
+@import 'browser';
+@import 'grid';
 
 body {
   font-family: "Open Sans";
+  margin: 0;
+  padding: 0;
+  margin-top: 50px;
 }
 
 .text {
   color: $navy;
 }
 
-.layout {
-  width: 700px;
-  margin: 0 auto;
-
-  .react-grid-item {
-    background-color: $lightgray;
-    border-radius: 5px;
-  }
-
-  .react-grid-item-dragging {
-    z-index: 100;
-  }
-
-  .react-grid-placeholder {
-    background-color: white;
-    border: 1px solid $lightgray;
-    z-index: 0;
-  }
-
-}
-
 .collection-creator {
   margin: 0 auto;
+  position: relative;
+  top: 30px;
   width: 700px;
 
   .create-header {

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router';
+import logo from '../../assets/logo.png';
 
 export default class Header extends React.Component {
 
@@ -9,8 +11,16 @@ export default class Header extends React.Component {
 
   render() {
     return (
-      <div>
-
+      <div className='header'>
+        <div className='container'>
+          <div className='logo'>
+            <img src={ logo }/>
+          </div>
+          <nav>
+            <Link to='/'>Assignments</Link>
+            <Link to='/students'>Students</Link>
+          </nav>
+        </div>
       </div>
     )
   }

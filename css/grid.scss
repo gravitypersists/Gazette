@@ -1,0 +1,25 @@
+@import 'colors';
+
+.layout {
+  width: 900px;
+  margin: 0 auto;
+
+  .react-grid-item {
+    background-color: $lightgray;
+    padding: 15px;
+    color: white;
+    box-sizing: border-box;
+    font-size: 20px;
+  }
+
+  .react-grid-item-dragging {
+    z-index: 100;
+  }
+
+  .react-grid-placeholder {
+    background-color: white;
+    border: 1px solid $lightgray;
+    z-index: 0;
+  }
+
+}

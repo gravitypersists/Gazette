@@ -12,19 +12,29 @@ export default class CollectionBrowser extends React.Component {
 
   renderCollection(c, id) {
     return (
-      <div className='collection'>
-        <div className='title'>{ c.title }</div>
-        <div className='date'>{ moment(c.date).fromNow() }</div>
-        <div className='configuration'></div>
-        <Link to={ `col/${id}` }>edit</Link>
-      </div>
+      <Link to={ `col/${id}` }>
+        <div className='collection'>
+          <div className='title'>{ c.type }</div>
+          <div className='description'>{ c.prompt.description }</div>
+          <div className='status'></div>
+        </div>
+      </Link>
     );
   }
 
   render() {
     const { collections } = this.props;
     return (
-      <div>{ _.map(collections, (c, id) => this.renderCollection(c, id)) }</div>
+      <div className='collection-browser'>
+        <button className='addButton' onClick={ this.props.onAdd }>
+          <div className='circle'>
+            <div className='slash'></div>
+            <div className='slash dash'></div>
+          </div>
+          <span className='slash-label'>Create new assignment</span>
+        </button>
+        { _.map(collections, (c, id) => this.renderCollection(c, id)) }
+      </div>
     )
   }
 

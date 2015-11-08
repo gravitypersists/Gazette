@@ -10,7 +10,7 @@ export default class EntryPreview extends React.Component {
   render() {
     return (
       <div>
-        hi
+        { this.props.entry.content }
       </div>
     )
   }
